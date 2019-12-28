@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+    bwa:
+        build:
+            context: .
+            dockerfile: ./docker/Dockerfile
+        image: bwa:development
+        container_name: bwa
+        restart: unless-stopped
+        environment:
+            - NODE_ENV=development
+        depends_on:
+            - 'mongo'
+        ports:
+            - '3000:3000'
+        networks:
+            - bwa
+
+    mongo:
+        image: mongo:4.2
+        container_name: bwa-mongo
+        restart: unless-stopped
+        volumes:
+            - bwa-mongo-data:/data/db
+        networks:
+            - bwa
+
+networks:
+    bwa:
+        driver: bridge
+
+volumes:
+    bwa-mongo-data:

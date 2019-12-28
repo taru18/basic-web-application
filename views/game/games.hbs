@@ -1,0 +1,7 @@
+<div class="container">
+    <h2>Games</h2>
+    {{>messages}}
+    {{#each games}}
+    <a href="/game/{{this._id}}">{{this.title}}</a><br>
+    {{/each}}
+</div>

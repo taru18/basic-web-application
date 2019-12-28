@@ -1,0 +1,8 @@
+<div class="container">
+    {{>messages}}
+    <form method="POST" action="/questionnaires/delete/{{questionnaire.id}}">
+        Are you sure you want to delete the questionnaire?<br />
+        <button type="submit" id="deleteButton">Yes</button>
+    </form>
+    <a href="/questionnaires" style="color:red">Cancel</a>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+    {{>messages}}
+    <form method="POST" action="/questionnaires/edit/{{questionnaire._id}}">
+        <div class="form-group">
+            <label for="newTitle">Choose new title:</label>
+            <input type="text" name="newTitle" id="newTitle" required>
+        </div>
+
+        <div class="form-group">
+            <label for="newSubmissions">New number of submissions:</label>
+            <input type="number" name="newSubmissions" id="newSubmissions" min="1" required>
+        </div>
+
+        <button type="submit" id="update">Update</button>
+    </form>

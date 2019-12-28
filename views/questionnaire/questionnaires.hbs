@@ -1,0 +1,10 @@
+<div class="container">
+    <h2>Questionnaires</h2>
+    {{>messages}}
+    {{#each questionnaires}}
+    <a href="/questionnaires/{{this._id}}">{{this.title}}</a><br />
+    {{/each}}
+    <br />
+    <a href="questionnaires/new" style="color:green">Create new questionnaire</a>
+
+</div>

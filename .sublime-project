@@ -1,0 +1,19 @@
+{
+    "settings":
+    {
+        "mini_diff": "auto",
+        "tab_size": 4,
+        "translate_tabs_to_spaces": true,
+        "detect_indentation": true,
+        "auto_indent": true,
+        "smart_indent": true,
+        "trim_automatic_white_space": true,
+        "auto_match_enabled": true,
+        "trim_trailing_white_space_on_save": true,
+        "ensure_newline_at_eof_on_save": true,
+        "default_encoding": "UTF-8",
+        "default_line_ending": "unix",
+        "show_encoding": true,
+        "show_line_endings": true
+    }
+}

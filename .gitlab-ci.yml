@@ -1,0 +1,23 @@
+image: tgcslearningtech/sonar-scanner-nodejs
+
+variables:
+    SONAR_PROJECT_KEY: $CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME
+
+stages:
+    - test
+
+MochaTests:
+    stage: test
+    tags:
+        - javascript
+    script:
+        - mongod --quiet --syslog &
+        - cp .env.test .env
+        - npm install
+        - npm test 
+    artifacts:
+        paths: 
+        - mochawesome-report/mochawesome.json   
+    when: always
+
+

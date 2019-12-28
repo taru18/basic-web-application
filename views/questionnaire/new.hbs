@@ -1,0 +1,115 @@
+<script>
+    function createQuestions() {
+
+        let options = [{ "option": document.getElementById('option1').value, "correctness": true, "hint": document.getElementById('hint1').value },
+        { "option": document.getElementById('option2').value, "correctness": true, "hint": document.getElementById('hint2').value },
+        { "option": document.getElementById('option3').value, "correctness": false, "hint": document.getElementById('hint3').value },
+        { "option": document.getElementById('option4').value, "correctness": false, "hint": document.getElementById('hint4').value },
+        { "option": document.getElementById('option5').value, "correctness": false, "hint": document.getElementById('hint5').value }
+        ];
+
+        let questions = [{
+            "title": document.getElementById('question').value,
+            "maxPoints": document.getElementById('maxPoints').value,
+            "options": options
+        }];
+
+        fetch('/questionnaires/new', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', },
+            body: JSON.stringify({
+                title: document.getElementById('title').value,
+                submissions: document.getElementById('submissions').value,
+                questions: questions
+            })
+        }).then(response => {
+            if (response.redirected) {
+                window.location.href = response.url;
+            }
+        });
+    }
+</script>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            <div class="card card-body">
+                <h2> Create questionnaire</h2>
+                {{>messages}}
+                <form>
+                    <div class="form-group">
+                        <label for="title">Choose title:</label>
+                        <input type="text" name="title" id="title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="submissions">Number of submissions:</label>
+                        <input type="number" name="submissions" id="submissions" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="question">Add question:</label>
+                        <input type="text" name="question" id="question" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maxPoints">Choose max points for the question:</label>
+                        <input type="number" name="maxPoints" id="maxPoints" min="1" required>
+                    </div>
+                    Add options for the question:
+                    <div class="form-group">
+                        <label for="option1">Add correct option 1:</label>
+                        <input type="text" name="option1" id="option1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hint1">Add hint for the option 1:</label>
+                        <input type="text" name="hint1" id="hint1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="option2">Add correct option 2:</label>
+                        <input type="text" name="option2" id="option2" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hint2">Add hint for the option 2:</label>
+                        <input type="text" name="hint2" id="hint2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="option3">Add wrong option 3:</label>
+                        <input type="text" name="option3" id="option3" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hint3">Add hint for the option 3:</label>
+                        <input type="text" name="hint3" id="hint3">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="option4">Add wrong option 4:</label>
+                        <input type="text" name="option4" id="option4" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hint4">Add hint for the option 4:</label>
+                        <input type="text" name="hint4" id="hint4">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="option5">Add wrong option 5:</label>
+                        <input type="text" name="option5" id="option5" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hint5">Add hint for the option 5:</label>
+                        <input type="text" name="hint5" id="hint5">
+                    </div>
+
+                    <button type="button" onclick="createQuestions()">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

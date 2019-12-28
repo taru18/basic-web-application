@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            {{>messages}}
+
+            {{#each questionnaire.questions}}
+            <a>{{this.title}}</a><br />
+            {{#each this.options}}
+            <a>{{this.option}}</a><br />
+            {{/each}}
+            {{/each}}
+
+        </div>
+        <a href="/questionnaires/delete/{{questionnaire._id}}" style="color:red">Delete questionnaire</a>
+        ||
+        <a href="/questionnaires/edit/{{questionnaire._id}}" style="color:green">Update questionnaire</a>
+    </div>
+</div>

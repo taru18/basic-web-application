@@ -1,0 +1,12 @@
+{
+    "editor.formatOnSave": true,
+    "files.hotExit": "off",
+    "files.autoSave": "onFocusChange",
+    "files.eol": "\n",
+    "prettier.tabWidth": 4,
+    "prettier.endOfLine": "lf",
+    "eslint.autoFixOnSave": true,
+    "eslint.run": "onSave",
+    "eslint.alwaysShowStatus": true,
+    "eslint.lintTask.enable": true,
+}

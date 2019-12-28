@@ -1,0 +1,20 @@
+<div id="game" class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            {{>messages}}
+            <form method="POST">
+
+            {{#each game.questions}}
+            <a>{{this.title}}</a><br>
+            <div class="options" id="options">
+
+                {{#each this.options}}
+                <input type="checkbox" name={{this._id}} id={{this.id}}>{{this.option}}<br>
+                {{/each}}
+            </div>
+            {{/each}}
+            <button id="grade" type="submit" class="btn btn-primary">Grade</button>
+            </form>
+        </div>
+    </div>
+</div>

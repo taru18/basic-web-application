@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "coenraads.bracket-pair-colorizer",
+        "editorconfig.editorconfig",
+        "formulahendry.auto-rename-tag",
+        "zignd.html-css-class-completion",
+        "pkief.material-icon-theme",
+        "eg2.vscode-npm-script",
+        "christian-kohler.npm-intellisense",
+        "wayou.vscode-todo-highlight"
+    ]
+}
